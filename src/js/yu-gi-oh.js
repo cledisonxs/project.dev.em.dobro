@@ -1,6 +1,21 @@
 const btnAvancar = document.getElementById("btn-avancar");
 const cartoes = document.querySelectorAll(".cartao");
+const btnVoltar = document.getElementById("btn-voltar");
 let cartaoAtual = 0;
+
+cartoes.forEach(cartao =>{
+    cartao.addEventListener('click',function (){
+        const cartaVirada = cartao.querySelector(".carta-virada");
+        //virar o cartao
+        cartao.classList.toggle("virar");
+        //mostrar o fundo da carta
+        cartaVirada.classList.toggle("mostrar-fundo-carta");
+
+        const descricao = cartao.querySelector('.descricao')
+        descricao.classList.toggle("esconder");
+        
+    });
+});
 
 //? BOTAO DE AVANCAR
 
@@ -20,8 +35,6 @@ cartoes[cartaoAtual].classList.add("selecionado")
 });
 
 //?BOTAO DE VOLTAR
-
-const btnVoltar = document.getElementById("btn-voltar");
 
 btnVoltar.addEventListener("click",function(){ ;
 
